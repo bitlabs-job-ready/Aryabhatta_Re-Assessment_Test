@@ -1,0 +1,328 @@
+The Test is divided into 2 sections. The first section has MCQ’s on Java, each question carries 1 marks, And the second section has 5 coding challenges , each question carries 18 marks.   
+Time Duration : 3 1/2hours
+Total Marks : 100 
+
+Section-1 (10Q X 1M = 10M)
+
+1.
+What will be the output of the following Java code?
+public class Array {
+    public static void main(String[] args) {
+        int[] arr = {2, 5, 8, 11, 14};
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+a) 40
+b) 50
+c) 20
+d) 14
+
+
+2. 
+What is the default value of an instance variable in Java?
+a) 0
+b) null
+c) Depends on the variable type
+d) Undefined
+
+3.
+Which of the following is not a valid keyword in Java?
+a) static
+b) void
+c) case
+d) native
+
+
+4. 
+What is the purpose of the finally block in Java exception handling?
+a) To handle exceptions
+b) To execute code whether an exception is thrown or not
+c) To terminate the program
+d) To define custom exceptions
+
+5.
+What will be the output of the following Java code?
+public class Test {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        System.out.println(str.substring(7, 12));
+    }
+}
+a) World
+b) Hello
+c) , Wor
+d) Null pointer exception
+
+6.
+What will be the output of the following Java code?
+public class Test {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = new String("Hello");
+        System.out.println(str1 == str2);
+    }
+}
+a) true
+b) false
+c) Compilation error
+d) Runtime error
+
+7.
+What will be the output of the following Java program?
+import java.util.LinkedList;
+import java.util.Queue;
+public class Collection{
+    public static void main(String[] args) {
+        Queue<String> tasks = new LinkedList<>();
+        tasks.offer("Task1");
+        tasks.offer("Task2");
+        tasks.offer("Task3");
+        System.out.println(tasks.poll());
+    }
+}
+a) Task1
+b) Task2
+c) Task3
+d) null
+
+8.
+What will be the output of the following Java program?
+class Output {
+    public static void main(String args[]) {
+        int arr[] = {3, 6, 9, 12, 15};
+        for (int i = 1; i < arr.length; i *= 2)
+            System.out.print(arr[i] + " ");
+    } 
+}
+a) 6 12
+b) 3 9 15
+c) 6 9 15
+d) 3 12
+
+9.
+What will be the output of the following Java code?
+class Shape {
+    protected double area;
+    public void calculateArea() {
+        // Implementation to calculate area
+    }
+    public double getArea() {
+        return area;
+    }
+}
+class Circle extends Shape {
+    private double radius;
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    public void calculateArea() {
+        area = Math.PI * radius * radius;
+    }
+}
+public class OOPQuestions {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+        circle.calculateArea();
+        System.out.println(circle.getArea());
+    }
+}
+a) 25.0
+b) 78.53981633974483
+c) 10.0
+d) Compilation Error
+
+
+10.
+What will be the output of the following Java code?
+abstract class Furniture {
+    protected String material;
+    public Furniture(String material) {
+        this.material = material;
+    }
+    public abstract void assemble();
+}
+class Chair extends Furniture {
+    public Chair(String material) {
+        super(material);
+    }
+    public void assemble() {
+        System.out.println("Assembling a chair with " + material);
+    }
+}
+public class OOPQuestions {
+    public static void main(String[] args) {
+        Furniture chair = new Chair("wood");
+        chair.assemble();
+    }
+}
+a) Assembling a chair with wood
+b) Assembling a chair with metal
+c) Compilation Error
+d) Assembling a furniture with wood
+
+
+
+
+SECTION-2 (5Q x 18M = 90M)
+
+
+Challenge:1
+Write a Java program to analyze cryptocurrency market data. The data consists of daily prices for multiple cryptocurrencies over a period of days. Each cryptocurrency's prices are represented as an array of integers, where each element represents the price on a particular day. Your program should take input for the number of cryptocurrencies and their prices for each day.
+Input Format:
+Enter the number of cryptocurrencies: 3
+Enter the number of days: 5
+Give price details of cryptocurrency 1: 50 60 45 70 55
+Give price details of cryptocurrency 2: 30 40 35 45 50
+Give price details of cryptocurrency 3: 80 90 85 100 95
+Output:
+Average price for cryptocurrency 1: 56
+Average price for cryptocurrency 2: 40
+Average price for cryptocurrency 3: 90
+
+Highest price of cryptocurrency 1: 70 (Day 4)
+Lowest price of cryptocurrency 1: 45 (Day 3)
+
+Highest price of cryptocurrency 2: 50 (Day 5)
+Lowest price of cryptocurrency 2: 30 (Day 1)
+
+Highest price of cryptocurrency 3: 100 (Day 4)
+Lowest price of cryptocurrency 3: 80 (Day 1)
+
+Day 1 highest price: 80
+Day 2 highest price: 90
+Day 3 highest price: 85
+Day 4 highest price: 100
+Day 5 highest price: 95
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Challenge:2
+Write a java code on a banking system that allows customers to create accounts, deposit and withdraw money, check their balance, and view their account information. 
+As a software developer, your task is to create a program that can perform these operations using object-oriented programming concepts.
+Task: Write a Java program that implements a Bank class and an Account class. The Bank class should contain methods for creating new accounts, depositing and withdrawing money, and checking daily withdrawal limits. 
+The Account class should store information about individual customer accounts, such as the account number, account holder name, and current balance.
+Instructions:
+Create an Account class with the following instance variables:
+1. accountNumber (String)
+2. accountHolderName (String)
+3. balance (double)
+Create a Bank class that contains an Object Array of Account objects, which will be used to store the account information.
+Add a method called createAccount() to the Bank class that takes the account holder name and initial balance as parameters and creates a new Account object with a unique account number.
+Add a method called deposit() to the Account class that takes an amount parameter and adds it to the account balance.
+Add a method called withdraw() to the Account class that takes an amount parameter and subtracts it from the account balance. The method should also check if the withdrawal amount exceeds the daily withdrawal limit, 
+which should be set to a default value of $500.
+
+Add a method called checkBalance() to the Account class that returns the current balance of the account.
+Add a method called displayInfo() to the Account class that displays the account number, account holder name, and current balance of the account.
+In the main method of the program, prompt the user to select an operation:
+1 to create a new account
+2 to deposit money
+3 to withdraw money
+4 to check the balance
+5 to display account information
+6 to exit the program
+Based on the user's selection, call the appropriate method in the Bank or Account class.
+Repeat steps 6 until the user chooses to exit the program.
+Example Output:
+Welcome to the Bank Management System!
+Please select an operation:
+Create an account
+Deposit money
+Withdraw money
+Check the balance
+Display account information
+Exit the program
+Enter your choice: 1
+Enter account holder name: John Doe
+Enter initial balance: 1000
+Account created successfully!
+Account number: 1001
+Account holder name: John Doe
+Current balance: 1000.0
+Please select an operation:
+
+Create an account
+Deposit money
+Withdraw money
+Check the balance
+Display account information
+Exit the program
+Enter your choice: 2
+Enter account number: 1001
+Enter amount to deposit: 500
+Amount deposited successfully!
+Current balance: 1500.0
+Please select an operation:
+Create an account
+Deposit money
+Withdraw money
+Check the balance
+Display account information
+Exit the program
+Enter your choice: 3
+
+Enter account number: 1001
+Enter amount to withdraw: 800
+Amount withdrawn successfully!
+Current balance: 700.0
+
+Please select an operation:
+Create an account
+Deposit money
+Withdraw money
+Check the balance
+Display account information
+Exit the program
+Enter your choice: 4
+Enter account number: 1001
+Current balance: 700
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Challenge:3
+Your startup is partnering with a genetics research institute, and they require a text compression algorithm for the effective storage and transmission of DNA sequences. Your task is to develop a program that fulfills this requirement.
+1.Accept an input string representing a DNA sequence (containing only 'A', 'C', 'G', and 'T').
+2.Identify consecutive sequences of the same character in the input string.
+3.Compress the DNA sequence by representing each consecutive sequence as a character-count pair.
+
+Input: "AAATTTCCCCGGGAA"
+Output: Compressed String: "A3T3C4G3A2"
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Challenge:4
+As the owner of a coffee shop, you need to manage your menu and related operations efficiently. Create a Java program that allows you to perform various tasks related to your coffee shop's menu:
+Add new coffee items
+Calculate the total value of all items on the menu
+Remove a coffee item by its item ID
+Update the price of a coffee item by its item ID
+Search for coffee items by name
+List all coffee items
+Quit the program
+Sample Input:
+1. Add new coffee items
+2. Remove a coffee item by its item ID
+3. Update the price of a coffee item by its item ID
+4. Search for coffee items by name
+5. List all coffee items
+6. Quit the program
+Select an option (1-6): 1
+Enter item ID: 2001
+Enter item name: Cappuccino
+Enter item price: Rs.3.99
+Menu item added successfully!
+Select an option (1-6): 5
+Sample Output (Listing All Coffee Items):
+Item ID: 2001,
+Item Name: Cappuccino, Price: Rs.3.99
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Challenge:5
+As a lover of poetry, you want to explore the artistry of pangrams in poetic sentences. Develop a Java program to check whether a given poetic sentence is a pangram.
+Expected Input:
+Enter a sentence: "Joyful explorer of language, the quick fox dances with pizzazz."
+Expected Output:
+"Joyful explorer of language, the quick fox dances with pizzazz." is a pangram.
+Expected Input:
+Enter a sentence: "JavaScript frameworks evolve, providing efficient solutions for web developers."
+Expected Output:
+"JavaScript frameworks evolve, providing efficient solutions for web developers." is not a pangram.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
